@@ -86,3 +86,15 @@ echo GEMINI_API_KEY="YOUR_API_KEY_HERE" > .env
 
 # Run backend
 uvicorn main:app --reload
+
+#The backend will be running at http://127.0.0.1:8000.
+
+# Frontend Setup Open a new terminal.
+#Navigate to the frontend directory:
+cd cognipath-ai-project/frontend
+
+#Install dependencies:
+npm install
+
+#Run the frontend development server:
+npm start
