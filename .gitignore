@@ -1,0 +1,66 @@
+# --- Python Backend ---
+
+# Virtual Environment
+cognipath-ai-backend/venv
+cognipath-ai-backend/.venv/
+
+# Database file
+cognipath-ai-backend/cognipath.db
+
+# Generated report images
+cognipath-ai-backend/static/reports/
+
+# Python cache
+cognipath-ai-backend/__pycache__/
+cognipath-ai-backend/*.pyc
+
+
+# --- React Frontend ---
+
+# Node modules - THE BIGGEST ONE!
+frontend/node_modules/
+
+# Production build output
+frontend/build/
+
+# Log and temp files
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+
+# --- General / OS specific ---
+
+# VSCode editor folder
+.vscode/
+
+# macOS folder
+.DS_Store
+```
+
+#### **Step 2: "Un-track" the Ignored Files (Critical Step)**
+
+Just creating the `.gitignore` file isn't enough. Your Git has likely already staged these large folders in its memory. We need to tell Git to clear its memory and re-evaluate the project using our new ignore rules.
+
+* **Action:** Run the following two commands in your terminal, one after the other.
+    * This first command is safe. It removes everything from Git's "staging area" but **does not delete any of your actual files**.
+    ```bash
+    git rm -r --cached .
+    ```
+    * This second command re-adds everything, but this time, it will obey the rules in your new `.gitignore` file and skip all the large folders.
+    ```bash
+    git add .
+    ```
+
+#### **Step 3: Commit and Push Again**
+
+Now that Git is only tracking your essential source code, you can commit the changes and push to GitHub.
+
+* **Action:** Run the following commands:
+    ```bash
+    git commit -m "feat: Add .gitignore and clean project for push"
+    ```
+    ```bash
+    git push -u origin main
+    
+```
